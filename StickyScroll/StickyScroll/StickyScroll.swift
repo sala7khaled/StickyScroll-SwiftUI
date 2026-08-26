@@ -16,21 +16,21 @@ struct StickyScroll: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: padding - 2) {
+                highlightSection
                 weatherSection
-                weatherSection2
+                highlightSection
                 weatherSection
-                weatherSection2
+                highlightSection
                 weatherSection
-                weatherSection2
+                highlightSection
                 weatherSection
-                weatherSection2
             }
         }
         .safeAreaPadding(padding)
     }
     
-    // MARK: - Weather Section
-    var weatherSection: some View {
+    // MARK: - Highlight Section
+    var highlightSection: some View {
         StickySection {
             HStack(spacing: 10) {
                 Image(systemName: "cloud.fill")
@@ -59,8 +59,8 @@ struct StickyScroll: View {
         }
     }
     
-    // MARK: - Weather Section 2
-    var weatherSection2: some View {
+    // MARK: - Weather Section
+    var weatherSection: some View {
         StickySection {
             VStack(spacing: 10) {
                 HStack(spacing: 10) {
